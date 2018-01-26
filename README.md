@@ -1,4 +1,4 @@
-# Simple-Bluetooth-Positioning-System
+## Simple-Bluetooth-Positioning-System
 利用樹梅派與藍芽模組實現三角定位
 <概述>
 樹梅派的當作藍芽基地台發送訊號，
@@ -7,11 +7,11 @@
 透過測量與三個基地台間的距離，
 定位出藍芽模組的所在地。
 
-# 分工
+## 分工
 文件製作、上傳：郭晉廷、魏志穎
 主程式：趙守恩
 
-# 素材
+## 素材
 1.Raspberry pi 3 * 3
 2.藍芽模組 * 1
 
