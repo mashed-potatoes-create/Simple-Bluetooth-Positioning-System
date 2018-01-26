@@ -16,3 +16,5 @@
 2.藍芽模組 * 1
 
 ## 結果展示
+![image](https://github.com/NCNU-OpenSource/Simple-Bluetooth-Positioning-System/blob/master/%E5%9F%B7%E8%A1%8C%E7%B5%90%E6%9E%9C.png)
+![image](https://github.com/NCNU-OpenSource/Simple-Bluetooth-Positioning-System/blob/master/%E5%9F%B7%E8%A1%8C%E7%B5%90%E6%9E%9C2.png)
