@@ -13,10 +13,17 @@
 主程式：趙守恩
 
 ## 素材
-1.Raspberry pi 3 * 3
+1 . Raspberry pi 3 * 3
 
-2.藍芽模組 * 1
+2 . 藍芽模組 * 1
+
+3 . 各式線材
 
 ## 結果展示
+結果一
+
 ![image](https://github.com/NCNU-OpenSource/Simple-Bluetooth-Positioning-System/blob/master/%E5%9F%B7%E8%A1%8C%E7%B5%90%E6%9E%9C.png)
+
+結果二
+
 ![image](https://github.com/NCNU-OpenSource/Simple-Bluetooth-Positioning-System/blob/master/%E5%9F%B7%E8%A1%8C%E7%B5%90%E6%9E%9C2.png)
