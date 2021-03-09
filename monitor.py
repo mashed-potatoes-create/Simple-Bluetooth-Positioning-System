@@ -1,11 +1,12 @@
 import socket,math,time,pygame
 from datetime import datetime
 
-obj_MAC = ""#
+obj_MAC = "38:89:2C:DD:8B:02"#
 obj_dis=[0,0,0]
-stations = [[3,0.4,1.5],[5,3,1.5],[0.35,1.4,1.5]]
+# stations = [[3,0.4,1.5],[5,3,1.5],[0.35,1.4,1.5]]
+stations = [ [0 , 0], [1, 0], [1, 2] ]
 
-UDP_IP = "" #ip
+UDP_IP = "172.20.10.4" #ip
 UDP_PORT0 = 5004
 UDP_PORT1 = 5005
 UDP_PORT2 = 5006
@@ -51,7 +52,7 @@ while True:
 		if devices0[i][1] == obj_MAC:
 			check0 = True
 			rssi0 = int(devices0[i][2])
-			distance0 = math.pow(10,((abs(rssi0)-59)/(10*2)))
+			distance0 = math.pow(10,((abs(rssi0)-53)/(10*5)))#这个公式可能需要测试参数
 			
 	data1, addr1 = socket1.recvfrom(1024)
 	tmp1 = str(data1)
@@ -71,7 +72,7 @@ while True:
 		if devices1[i][1] == obj_MAC:
 			check1 = True
 			rssi1 = int(devices1[i][2])
-			distance1 = math.pow(10,((abs(rssi1)-59)/(10*2)))
+			distance1 = math.pow(10,((abs(rssi1)-53)/(10*5)))
 			
 	data2, addr2 = socket2.recvfrom(1024)
 	tmp2 = str(data2)
@@ -91,18 +92,18 @@ while True:
 		if devices2[i][1] == obj_MAC:
 			check2 = True
 			rssi2 = int(devices2[i][2])
-			distance2 = math.pow(10,((abs(rssi2)-59)/(10*2)))
+			distance2 = math.pow(10,((abs(rssi2)-53)/(10*5)))
 		
 	if check0 and check1 and check2:
 		screen.fill((44,44,44))
 		#高度(z)相同
-		sta0 = pygame.draw.circle(screen,(255,255,255),(370+int(10*float(stations[0][0])),320+int(10*float(stations[0][1]))),3,1)
-		sta1 = pygame.draw.circle(screen,(255,255,255),(370+int(10*float(stations[1][0])),320+int(10*float(stations[1][1]))),3,1)
-		sta2 = pygame.draw.circle(screen,(255,255,255),(370+int(10*float(stations[2][0])),320+int(10*float(stations[2][1]))),3,1)
+		sta0 = pygame.draw.circle(screen,(255,0,0),(370+int(10*float(stations[0][0])),320+int(10*float(stations[0][1]))),3,1)
+		sta1 = pygame.draw.circle(screen,(0,255,0),(370+int(10*float(stations[1][0])),320+int(10*float(stations[1][1]))),3,1)
+		sta2 = pygame.draw.circle(screen,(0,0,255),(370+int(10*float(stations[2][0])),320+int(10*float(stations[2][1]))),3,1)
 
-		pygame.draw.circle(screen,(255,255,255),(370+int(10*float(stations[0][0])),320+int(10*float(stations[0][1]))),int(10*(distance0)),1)
-		pygame.draw.circle(screen,(255,255,255),(370+int(10*float(stations[1][0])),320+int(10*float(stations[1][1]))),int(10*(distance1)),1)
-		pygame.draw.circle(screen,(255,255,255),(370+int(10*float(stations[2][0])),320+int(10*float(stations[2][1]))),int(10*(distance2)),1)
+		pygame.draw.circle(screen,(255,0,0),(370+int(10*float(stations[0][0])),320+int(10*float(stations[0][1]))),int(10*(distance0)),1)
+		pygame.draw.circle(screen,(0,255,0),(370+int(10*float(stations[1][0])),320+int(10*float(stations[1][1]))),int(10*(distance1)),1)
+		pygame.draw.circle(screen,(0,0,255),(370+int(10*float(stations[2][0])),320+int(10*float(stations[2][1]))),int(10*(distance2)),1)
 
 		t = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 		text = font.render(t,True,(255,255,255))
